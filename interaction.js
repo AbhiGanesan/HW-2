@@ -1,5 +1,5 @@
-// ---------- Settings ----------
-var CSV_FILE = "PSU_ReportedCrimes.csv"; // change if your CSV has a different name
+
+var CSV_FILE = "PSU_ReportedCrimes.csv"; // 
 var PSU_CENTER = [40.7982, -77.8599];    // center of PSU campus
 
 // ---------- Map setup ----------
@@ -45,7 +45,7 @@ categories.forEach(function (c) {
   groups[c.name] = L.layerGroup().addTo(map);
 });
 
-// ---------- Load the data and add markers ----------
+
 // Read as text first so the code works whether the file is comma or tab separated
 d3.text(CSV_FILE, function (error, text) {
   if (error) { console.error("Could not load " + CSV_FILE, error); return; }
