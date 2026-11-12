@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <title>HW2 Mapping</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- This css needs to come first. It sets the size of the map -->
+    <link rel="stylesheet" href="./style.css" />
+
+    <!-- d3 is used to read the CSV file -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+
+    <!-- Leaflet css and js, in this order -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"></script>
+
+    <!-- Colored marker icon definitions -->
+    <script src="./icons.js"></script>
+
+    <style>
+      body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 10px; }
+      .legend { background: #fff; padding: 6px 10px; line-height: 22px; border-radius: 4px; box-shadow: 0 0 4px #888; }
+      .legend label { display: block; cursor: pointer; }
+      .legend img { vertical-align: middle; }
+    </style>
+  </head>
+  <body>
+    <h3>HW2 Mapping: PSU Reported Crimes</h3>
+    <div id="map"></div>
+
+    <h3>Short Answer Questions</h3>
+    <p><b>1. Ana and the Walker building.</b> Ana wants to know which crimes are most prevalent near Walker. The task is to summarize the distribution of offense types for the incidents inside a small region, so the target is an attribute (offense category) within a spatial subset, and the action is to compare how common each category is. An idiom that would help is a map where Ana can select a radius around Walker, linked to a bar chart showing the count of incidents for each offense category in that selection. The bar lengths make the most common crimes easy to rank.</p>
+    <p><b>2. James and where a crime is common.</b> James wants to know the areas where one particular crime is common. The task is to locate spatial hotspots for a single offense, so the action is to filter to that offense and then identify dense clusters, and the target is the spatial distribution of those incidents. An idiom that would help is a map with an offense filter combined with a density heat map (or clustered markers), so only the chosen crime is shown and the busiest areas stand out by color intensity.</p>
+
+    <h3>Bonus Feature</h3>
+    <p>I added a legend in the bottom right of the map that shows the color used for each offense category. Each legend item also has a checkbox that hides or shows the markers in that category, so it works as a filter.</p>
+
+    <!-- The map div must exist before this script runs -->
+    <script src="./interaction.js"></script>
+  </body>
+</html>
